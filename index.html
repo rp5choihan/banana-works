@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BananaWorks Strategic Expansion Report - 2025 Roadmap and Analysis">
+    <title>BananaWorks: Strategic Expansion Report</title>
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        banana: {
+                            50: '#FFFBEB',
+                            100: '#FEF9C3',
+                            200: '#FEF08A',
+                            300: '#FDE047',
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#CA8A04',
+                            800: '#854D0E',
+                            900: '#713F12',
+                        },
+                        teal: {
+                            50: '#f0fdfa',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        dark: {
+                            800: '#1F2937',
+                            900: '#111827',
+                            950: '#030712',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'Consolas', 'monospace'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(234, 179, 8, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden selection:bg-banana-200">
+
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-banana-500 focus:text-white rounded-md">
+        본문으로 건너뛰기
+    </a>
+
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-gray-200/50 transition-all duration-300" id="navbar" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <button class="flex items-center gap-2 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-banana-500 rounded-lg p-1" onclick="window.scrollTo(0,0)" aria-label="BananaWorks Top">
+                <div class="bg-banana-100 p-1.5 rounded-lg group-hover:bg-banana-200 transition-colors" aria-hidden="true">
+                    <i data-lucide="banana" class="text-banana-600 w-5 h-5 fill-current"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-gray-900">BananaWorks <span class="text-gray-500 font-normal text-sm hidden sm:inline">| Scalability Report</span></span>
+            </button>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600" role="menubar">
+                <a href="#diagnosis" class="hover:text-teal-600 transition-colors focus:outline-none focus:text-teal-800 focus:underline" role="menuitem">현황 진단</a>
+                <a href="#strategy" class="hover:text-teal-600 transition-colors focus:outline-none focus:text-teal-800 focus:underline" role="menuitem">확장 전략</a>
+                <a href="#roadmap" class="hover:text-teal-600 transition-colors focus:outline-none focus:text-teal-800 focus:underline" role="menuitem">로드맵</a>
+                <a href="#tech" class="hover:text-teal-600 transition-colors focus:outline-none focus:text-teal-800 focus:underline" role="menuitem">기술 구조</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <header class="relative pt-32 pb-20 px-6 min-h-[85vh] flex items-center justify-center overflow-hidden bg-white">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-banana-50/50 via-white to-white -z-10"></div>
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-teal-100/20 rounded-full blur-3xl animate-pulse-slow pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-banana-200/20 rounded-full blur-3xl animate-pulse-slow delay-700 pointer-events-none"></div>
+
+
+            <div class="max-w-5xl mx-auto text-center hero-content z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm text-teal-800 text-xs font-bold mb-8 gs-fade-up">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                    </span>
+                    2025 Strategic Expansion Roadmap
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight gs-fade-up">
+                    From Utility Tool<br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-banana-500 to-teal-500">To Productivity Platform</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed gs-fade-up delay-100">
+                    실무 중심 노코드 AI 템플릿, <strong>BananaWorks</strong>.<br />
+                    현황 분석을 통해 발견한 기회와 플랫폼 도약을 위한 4가지 핵심 전략을 제시합니다.
+                </p>
+                <div class="gs-fade-up delay-200 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#diagnosis" class="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 hover:scale-105 transition-all shadow-lg hover:shadow-banana-500/20 focus:outline-none focus:ring-4 focus:ring-gray-300">
+                        분석 리포트 확인하기 <i data-lucide="arrow-down" class="w-4 h-4" aria-hidden="true"></i>
+                    </a>
+                    <button id="btn-open-demo" class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 border border-gray-200 px-8 py-4 rounded-full font-bold hover:bg-gray-50 hover:border-gray-300 transition-all focus:outline-none focus:ring-4 focus:ring-banana-200">
+                        <i data-lucide="play-circle" class="w-4 h-4" aria-hidden="true"></i> 데모 시뮬레이터 (Beta)
+                    </button>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- AS-IS Analysis Section -->
+        <section id="diagnosis" class="py-24 px-6 bg-white border-t border-gray-100 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 gs-reveal">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">현황 진단 (AS-IS Analysis)</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        BananaWorks는 '실무 유틸리티'로서 강력한 잠재력을 보유하고 있으나, <br />초기 진입 장벽과 네트워크 효과의 부재가 성장을 저해하고 있습니다.
+                    </p>
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Strengths -->
+                    <div class="h-full bg-teal-50/30 p-8 rounded-3xl border border-teal-100 gs-reveal-left hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2 bg-teal-100 rounded-lg text-teal-700" aria-hidden="true">
+                                <i data-lucide="thumbs-up" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">핵심 강점 (Strengths)</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3 items-start">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                <div>
+                                    <strong class="block text-gray-900 font-semibold">직관적 접근성 (Context-First)</strong>
+                                    <p class="text-sm text-gray-600 mt-1">프롬프트 고민 없이 목적(UI, 표지 등)만 선택하면 되는 '빈 캔버스 증후군' 해결책.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-3 items-start">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                <div>
+                                    <strong class="block text-gray-900 font-semibold">비용 효율성 (BYOK)</strong>
+                                    <p class="text-sm text-gray-600 mt-1">자체 서버 비용 최소화 및 헤비 유저에게 가장 저렴한 옵션 제공.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-3 items-start">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                <div>
+                                    <strong class="block text-gray-900 font-semibold">광범위한 커버리지</strong>
+                                    <p class="text-sm text-gray-600 mt-1">IT, 비즈니스, 예술 등 실무 전반을 아우르는 123개의 템플릿.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Weaknesses -->
+                    <div class="h-full bg-gray-50 p-8 rounded-3xl border border-gray-200 gs-reveal-right hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2 bg-gray-200 rounded-lg text-gray-700" aria-hidden="true">
+                                <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">주요 약점 (Weaknesses)</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3 items-start">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                <div>
+                                    <strong class="block text-gray-900 font-semibold">높은 초기 진입 장벽</strong>
+                                    <p class="text-sm text-gray-600 mt-1">API Key 발급 과정은 일반 사용자에게 큰 이탈 요인(Churn Factor).</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-3 items-start">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                <div>
+                                    <strong class="block text-gray-900 font-semibold">데이터 휘발성</strong>
+                                    <p class="text-sm text-gray-600 mt-1">로컬 스토리지 의존으로 기기 간 연동 불가 및 데이터 유실 위험.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-3 items-start">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                <div>
+                                    <strong class="block text-gray-900 font-semibold">네트워크 효과 부재</strong>
+                                    <p class="text-sm text-gray-600 mt-1">사용자 간 공유/리믹스 기능 부재로 자발적 바이럴 확산 불가.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Strategy Chart Section -->
+        <section class="py-16 px-6 bg-gray-50 border-y border-gray-200" aria-labelledby="matrix-heading">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 gs-fade-up">
+                    <h2 id="matrix-heading" class="text-2xl font-bold text-gray-900 mb-4">전략적 우선순위 매트릭스</h2>
+                    <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+                        제안된 4가지 전략의 <strong>실현 가능성(Feasibility)</strong>과 <strong>비즈니스 영향력(Impact)</strong>을 분석했습니다.<br /><br />
+                        우측 상단의 <span class="text-banana-600 font-bold">Smart Prompt Refiner</span>는 가장 확실한 승부수이며, <span class="text-blue-600 font-bold">Hybrid Pricing</span>은 비즈니스 모델의 핵심 전환점입니다.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 bg-banana-100 text-banana-900 rounded border border-banana-200">High Impact</span>
+                        <span class="px-2 py-1 bg-teal-100 text-teal-900 rounded border border-teal-200">High Feasibility</span>
+                    </div>
+                </div>
+                <div class="md:w-2/3 w-full h-[400px] bg-white rounded-2xl p-6 shadow-sm border border-gray-200 relative gs-scale-up" role="img" aria-label="Strategy Priorty Bubble Chart">
+                    <canvas id="strategyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Expansion Proposals Section with Filters -->
+        <section id="strategy" class="py-24 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-10 gs-fade-up">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">확장 전략 (Expansion Strategy)</h2>
+                    <p class="text-gray-600 mb-8">약점을 보완하고 강점을 극대화할 4가지 핵심 제안입니다.</p>
+                    
+                    <!-- Filters -->
+                    <div class="inline-flex p-1 bg-gray-100 rounded-lg gap-1 border border-gray-200" role="tablist" aria-label="Proposal Filters">
+                        <button class="filter-btn active px-4 py-2 text-sm font-semibold rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-banana-400" data-filter="all" aria-selected="true" role="tab">All</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-semibold text-gray-500 hover:text-gray-900 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-banana-400" data-filter="UX" aria-selected="false" role="tab">UX/UI</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-semibold text-gray-500 hover:text-gray-900 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-banana-400" data-filter="Biz Model" aria-selected="false" role="tab">Business</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-semibold text-gray-500 hover:text-gray-900 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-banana-400" data-filter="Community" aria-selected="false" role="tab">Community</button>
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="proposal-grid">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- User Feedback Simulation Section (NEW) -->
+        <section id="feedback" class="py-16 px-6 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    <!-- Feedback Form -->
+                    <div class="w-full md:w-1/3 gs-fade-up">
+                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm sticky top-24">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                <i data-lucide="message-square-plus" class="w-5 h-5 text-banana-500"></i>
+                                의견 시뮬레이션
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-6">제안된 전략에 대한 가상의 사용자 피드백을 등록하고 반응성을 테스트하세요.</p>
+                            <form id="feedback-form" class="space-y-4">
+                                <div>
+                                    <label for="fb-user" class="block text-xs font-bold text-gray-700 mb-1">USER TYPE</label>
+                                    <select id="fb-user" class="w-full text-sm bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-banana-400 focus:border-transparent outline-none transition-shadow">
+                                        <option value="Senior Designer">Senior Designer</option>
+                                        <option value="Product Owner">Product Owner</option>
+                                        <option value="Prompt Engineer">Prompt Engineer</option>
+                                        <option value="Early Adopter">Early Adopter</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="fb-content" class="block text-xs font-bold text-gray-700 mb-1">COMMENT</label>
+                                    <textarea id="fb-content" rows="3" placeholder="의견을 입력하세요..." required class="w-full text-sm bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-banana-400 focus:border-transparent outline-none transition-shadow resize-none"></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-2.5 bg-gray-900 text-white text-sm font-bold rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                                    <i data-lucide="send" class="w-4 h-4"></i> 등록 시뮬레이션
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <!-- Feedback List -->
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-lg font-bold text-gray-900 mb-6">User Voices <span class="text-sm font-normal text-gray-500 ml-2">(Live Updates)</span></h3>
+                        <div id="feedback-list" class="space-y-4">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-24 px-6 bg-dark-900 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-16 gs-fade-up">
+                    <h2 class="text-3xl font-bold mb-4">기술 구현 로드맵 (Roadmap)</h2>
+                    <p class="text-gray-400">안정적 기반 마련에서 생태계 확장까지의 3단계 실행 계획</p>
+                </div>
+
+
+                <div class="relative">
+                    <!-- Connecting Line -->
+                    <div class="absolute left-8 md:left-0 md:top-8 w-1 h-full md:w-full md:h-1 bg-gray-700 rounded-full transform md:translate-y-4"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                        <!-- Phase 1 -->
+                        <div class="roadmap-item relative pl-20 md:pl-0 md:pt-24 group cursor-default">
+                            <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 md:top-8 w-5 h-5 rounded-full bg-dark-900 border-4 border-gray-600 group-hover:border-banana-500 transition-colors z-20"></div>
+                            <span class="inline-block px-3 py-1 rounded bg-gray-800 text-banana-400 text-xs font-bold mb-4 border border-gray-700">Phase 1: 기반 다지기 (1-2개월)</span>
+                            <h3 class="text-xl font-bold mb-3 text-white group-hover:text-banana-400 transition-colors">진입 장벽 제거</h3>
+                            <ul class="space-y-3 text-sm text-gray-400">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> 사용자 인증 (Auth) 도입</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> API Proxy 서버 구축</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> 클라우드 DB (히스토리 저장)</li>
+                            </ul>
+                        </div>
+
+
+                        <!-- Phase 2 -->
+                        <div class="roadmap-item relative pl-20 md:pl-0 md:pt-24 group cursor-default">
+                            <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 md:top-8 w-5 h-5 rounded-full bg-dark-900 border-4 border-gray-600 group-hover:border-teal-500 transition-colors z-20"></div>
+                            <span class="inline-block px-3 py-1 rounded bg-gray-800 text-teal-400 text-xs font-bold mb-4 border border-gray-700">Phase 2: 연결과 확장 (3-4개월)</span>
+                            <h3 class="text-xl font-bold mb-3 text-white group-hover:text-teal-400 transition-colors">커뮤니티 & 품질</h3>
+                            <ul class="space-y-3 text-sm text-gray-400">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-500"></i> 갤러리 & 리믹스 오픈</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-500"></i> 스마트 프롬프트 리파이너</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-500"></i> 주간 챌린지 도입</li>
+                            </ul>
+                        </div>
+
+
+                        <!-- Phase 3 -->
+                        <div class="roadmap-item relative pl-20 md:pl-0 md:pt-24 group cursor-default">
+                            <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 md:top-8 w-5 h-5 rounded-full bg-dark-900 border-4 border-gray-600 group-hover:border-purple-500 transition-colors z-20"></div>
+                            <span class="inline-block px-3 py-1 rounded bg-gray-800 text-purple-400 text-xs font-bold mb-4 border border-gray-700">Phase 3: 생태계 구축 (5개월+)</span>
+                            <h3 class="text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">외부 연동 & B2B</h3>
+                            <ul class="space-y-3 text-sm text-gray-400">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Figma/Notion 플러그인</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Enterprise (SSO) 요금제</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> 템플릿 마켓플레이스</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Technical Insight Section -->
+        <section id="tech" class="py-24 px-6 bg-gray-50">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    <div class="md:w-1/2 gs-reveal-left">
+                        <div class="inline-flex items-center gap-2 mb-4 text-banana-600 font-bold">
+                            <i data-lucide="database"></i> Data Structure
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">확장 가능한 데이터 구조</h2>
+                        <p class="text-gray-600 leading-relaxed mb-8">
+                            시스템 확장을 위해 <strong>'Recipe'</strong> 개념을 도입합니다.<br />
+                            단순 이미지가 아닌, 생성에 필요한 모든 메타데이터(프롬프트, 파라미터, 모델 설정)를 JSON 형태로 저장하여 
+                            <strong>완벽한 재생성(Reproduction)</strong>과 <strong>리믹스(Remix)</strong>를 지원합니다.
+                        </p>
+                        <div class="p-6 bg-white rounded-2xl shadow-sm border border-gray-200">
+                            <h4 class="font-bold text-gray-900 mb-2">Why JSON Recipe?</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex gap-2"><span class="text-green-500">✓</span> 템플릿의 버전 관리 용이</li>
+                                <li class="flex gap-2"><span class="text-green-500">✓</span> 플랫폼 간(Web ↔ Figma) 데이터 호환</li>
+                                <li class="flex gap-2"><span class="text-green-500">✓</span> 용량 최적화 (이미지 대신 텍스트 저장)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 w-full gs-reveal-right">
+                        <div class="bg-dark-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-800">
+                            <div class="flex items-center gap-2 px-4 py-3 bg-dark-950 border-b border-gray-800">
+                                <div class="flex gap-1.5" aria-hidden="true">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs text-gray-500 ml-2 font-mono">recipe_schema.json</span>
+                            </div>
+                            <pre class="p-6 text-sm font-mono text-gray-300 overflow-x-auto custom-scrollbar" tabindex="0"><code class="language-json">
+{
+  "recipe_id": "rec_12345",
+  "author_id": "user_889",
+  "is_public": true,
+  "base_template": "template_042_ui",
+  "parameters": {
+    "model": "nano_banana_pro",
+    "ratio": "16:9",
+    "style": "cyberpunk_ui",
+    "user_prompt": "Financial dashboard...",
+    "magic_refined_prompt": "High fidelity..."
+  },
+  "metrics": {
+    "likes": 150,
+    "remix_count": 45
+  },
+  "created_at": "2025-12-03T21:00:00Z"
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Conclusion Section -->
+        <section class="py-20 px-6 bg-white border-t border-gray-100 text-center">
+            <div class="max-w-3xl mx-auto gs-scale-up">
+                <i data-lucide="rocket" class="w-12 h-12 text-banana-500 mx-auto mb-6"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Conclusion</h2>
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                    BananaWorks는 단순한 '이미지 생성 도구'를 넘어,<br />
+                    비즈니스와 창작 영역의 <strong>필수 생산성 파트너</strong>로 자리매김해야 합니다.<br />
+                    <strong>구독 모델, 품질 혁신, 커뮤니티</strong>가 그 열쇠입니다.
+                </p>
+                <button onclick="window.scrollTo(0,0)" class="px-8 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    맨 위로 이동
+                </button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-50 text-gray-400 text-center text-sm border-t border-gray-200">
+        <p>&copy; 2025 BananaWorks Expansion Analysis. Based on in-depth audit report.</p>
+    </footer>
+
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px] transition-opacity opacity-0 modal-backdrop"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl transform scale-95 opacity-0 transition-all duration-300 modal-content overflow-hidden max-h-[85vh] flex flex-col pointer-events-auto">
+                <!-- Modal Header -->
+                <div class="p-6 border-b border-gray-100 flex justify-between items-start bg-gradient-to-r from-gray-50 to-white flex-shrink-0">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span id="modal-tag" class="px-2.5 py-0.5 rounded text-xs font-bold bg-gray-100 text-gray-600 uppercase tracking-wide">Category</span>
+                            <span class="text-xs text-gray-400">Strategy Detail</span>
+                        </div>
+                        <h3 id="modal-title" class="text-2xl font-bold text-gray-900">Title</h3>
+                        <p id="modal-short" class="text-gray-500 text-sm mt-1"></p>
+                    </div>
+                    <button id="modal-close" class="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300" aria-label="Close modal">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                
+                <!-- Modal Body (Scrollable) -->
+                <div class="p-8 overflow-y-auto custom-scrollbar focus:outline-none" tabindex="0">
+                    <div class="mb-8">
+                        <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4 text-banana-500"></i> Description
+                        </h4>
+                        <p id="modal-desc" class="text-gray-700 leading-relaxed"></p>
+                    </div>
+
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                            <h4 class="font-bold text-blue-900 mb-2 text-sm flex items-center gap-2">
+                                <i data-lucide="trending-up" class="w-4 h-4"></i> 시장 트렌드 & 기회
+                            </h4>
+                            <p id="modal-trend" class="text-sm text-blue-800 leading-snug"></p>
+                        </div>
+                        <div class="bg-green-50/50 p-5 rounded-xl border border-green-100">
+                            <h4 class="font-bold text-green-900 mb-2 text-sm flex items-center gap-2">
+                                <i data-lucide="target" class="w-4 h-4"></i> 예상 효과 (ROI)
+                            </h4>
+                            <p id="modal-effect" class="text-sm text-green-800 leading-snug"></p>
+                        </div>
+                    </div>
+
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+                         <div>
+                            <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+                                <i data-lucide="alert-circle" class="w-4 h-4 text-red-500"></i> Potential Risks
+                            </h4>
+                            <p id="modal-risk" class="text-sm text-gray-700 bg-red-50 p-3 rounded border border-red-100"></p>
+                         </div>
+                         <div>
+                            <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+                                <i data-lucide="wrench" class="w-4 h-4 text-gray-500"></i> Difficulty
+                            </h4>
+                            <p id="modal-difficulty" class="text-sm text-gray-700 p-3 bg-gray-50 rounded border border-gray-100"></p>
+                         </div>
+                    </div>
+
+
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Implementation Steps</h4>
+                        <ul id="modal-steps" class="space-y-3">
+                            <!-- Injected by JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Demo Simulator Modal (NEW) -->
+    <div id="demo-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0 demo-backdrop"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-dark-900 border border-gray-800 rounded-2xl shadow-glow w-full max-w-2xl transform scale-95 opacity-0 transition-all duration-300 demo-content overflow-hidden flex flex-col pointer-events-auto">
+                
+                <!-- Demo Header -->
+                <div class="px-6 py-4 border-b border-gray-800 flex justify-between items-center bg-dark-950">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="sparkles" class="text-banana-400 w-5 h-5"></i>
+                        <h3 id="demo-title" class="text-lg font-bold text-white">BananaWorks Smart Gen (Simulator)</h3>
+                    </div>
+                    <button id="demo-close" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-banana-500 rounded p-1">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+
+                <!-- Demo Body -->
+                <div class="p-6">
+                    <div class="flex flex-col gap-6" id="demo-input-view">
+                        <div>
+                            <label class="block text-gray-400 text-xs font-bold mb-2 uppercase">Simple Input (Human)</label>
+                            <input type="text" id="demo-prompt" class="w-full bg-dark-800 text-white border border-gray-700 rounded-lg px-4 py-3 focus:border-banana-500 focus:ring-1 focus:ring-banana-500 outline-none transition-all placeholder-gray-600" placeholder="e.g., Pink futuristic car in neon city" value="Pink futuristic car in neon city">
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-400 text-xs font-bold mb-2 uppercase">Core Style</label>
+                                <select id="demo-style" class="w-full bg-dark-800 text-white border border-gray-700 rounded-lg px-3 py-2.5 focus:border-banana-500 outline-none">
+                                    <option value="cyberpunk">Cyberpunk</option>
+                                    <option value="watercolor">Watercolor</option>
+                                    <option value="photorealistic">Photorealistic</option>
+                                    <option value="origami">3D Origami</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 text-xs font-bold mb-2 uppercase">Model</label>
+                                <select class="w-full bg-dark-800 text-gray-400 border border-gray-700 rounded-lg px-3 py-2.5 outline-none cursor-not-allowed" disabled>
+                                    <option>Banana-XL (Turbo)</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-banana-400 text-xs font-bold flex items-center gap-1"><i data-lucide="wand-2" class="w-3 h-3"></i> AI Smart Refiner Active</span>
+                                <span class="text-gray-500 text-xs">Simulated Logic</span>
+                            </div>
+                            <p class="text-gray-400 text-sm leading-relaxed" id="demo-preview-text">
+                                The AI will analyze your simple input and expand it with lighting, texture, and composition details automatically.
+                            </p>
+                        </div>
+
+
+                        <button id="btn-generate" class="w-full py-4 bg-gradient-to-r from-banana-500 to-banana-600 hover:from-banana-400 hover:to-banana-500 text-dark-950 font-bold text-lg rounded-xl shadow-lg shadow-banana-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                           <i data-lucide="zap" class="w-5 h-5 fill-current"></i> GENERATE
+                        </button>
+                    </div>
+
+
+                    <!-- Loader View -->
+                    <div id="demo-loader-view" class="hidden flex-col items-center justify-center py-10">
+                        <div class="relative w-16 h-16 mb-6">
+                            <div class="absolute inset-0 border-4 border-gray-700 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-banana-500 rounded-full border-t-transparent animate-spin"></div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-white font-bold mb-1">Refining Prompt...</h4>
+                            <p class="text-gray-500 text-sm" id="demo-loader-text">Analyzing context...</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Result View -->
+                    <div id="demo-result-view" class="hidden">
+                        <div class="flex flex-col gap-4">
+                            <div class="relative bg-dark-950 rounded-xl overflow-hidden border border-gray-800 aspect-video flex items-center justify-center group">
+                                <!-- Placeholder for generated image -->
+                                <div class="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-blue-900/40"></div>
+                                <div class="relative text-center z-10 p-6">
+                                    <i data-lucide="image" class="w-12 h-12 text-gray-600 mx-auto mb-3"></i>
+                                    <p class="text-gray-400 text-xs uppercase tracking-widest">Simulation Result</p>
+                                    <p class="text-white font-bold text-lg mt-1" id="demo-result-title">Cyberpunk City</p>
+                                </div>
+                                <div class="absolute bottom-4 right-4 flex gap-2">
+                                    <button class="p-2 bg-black/50 hover:bg-white/20 rounded-lg text-white backdrop-blur-sm transition-colors" title="Download"><i data-lucide="download" class="w-4 h-4"></i></button>
+                                    <button class="p-2 bg-black/50 hover:bg-white/20 rounded-lg text-white backdrop-blur-sm transition-colors" title="Remix"><i data-lucide="git-fork" class="w-4 h-4"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-dark-800 p-4 rounded-lg border border-gray-700">
+                                <span class="text-xs text-gray-500 font-bold block mb-2 uppercase">Refined Prompt (Actual Input)</span>
+                                <p class="text-sm text-green-400 font-mono leading-relaxed" id="demo-final-prompt">
+                                    > (Simulated) Detailed instructions for rendering...
+                                </p>
+                            </div>
+
+
+                            <button id="btn-reset-demo" class="w-full py-3 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-700 transition-colors">
+                                Try Another
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
