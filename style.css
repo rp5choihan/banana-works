@@ -1,0 +1,142 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f9fafb;
+}
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+}
+
+
+/* Glassmorphism Utilities */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+
+/* Animations */
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+
+.animate-pulse-slow {
+    animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+.card-hover-effect {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.card-hover-effect:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #FDE047;
+}
+
+
+/* Feedback List Animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.feedback-item {
+    animation: slideIn 0.4s ease-out forwards;
+}
+
+
+/* Filter Buttons */
+.filter-btn.active {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.filter-btn:not(.active):hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+
+/* Focus Utility */
+*:focus-visible {
+    outline: 2px solid #EAB308;
+    outline-offset: 2px;
+}
+
+
+/* Chart Container */
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* Modal Open State */
+.modal-open {
+    overflow: hidden;
+    padding-right: 8px; /* avoid layout shift from scrollbar removal */
+}
+
+
+/* Roadmap & Steps */
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.step-item::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #EAB308;
+    flex-shrink: 0;
+}
+
+
+/* Code Block Styling */
+pre {
+    background: #111827;
+    color: #e5e7eb;
+}
+code.language-json {
+    font-family: 'Fira Code', monospace;
+    line-height: 1.6;
+}
